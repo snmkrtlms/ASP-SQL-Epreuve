@@ -26,8 +26,5 @@ namespace ASP_Epreuve_ASP_SQL.Models
         [DisplayName("Catégorie : ")]
         [Required(ErrorMessage = "La catégorie est obligatoire.")]
         public string Categorie { get; set; }
-        [DisplayName("Médias :")]
-        [Required]
-        public IFormFile Medias { get; set; }
     }
 }

@@ -1,4 +1,6 @@
 ﻿@model ASP_Epreuve_ASP_SQL.Models.ProduitEditForm
+@inject Shared_Epreuve_ASP_SQL.Repositories.ICategorieRepository<BLL_Epreuve_ASP_SQL.Entities.Categorie> categorieRepository
+@inject Shared_Epreuve_ASP_SQL.Repositories.ICritereEcoRepository<BLL_Epreuve_ASP_SQL.Entities.CritereEco> critereEcoRepository
 
 @{
     ViewData["Title"] = "Edit";
@@ -34,18 +36,23 @@
             </div>
             <div class="form-group">
                 <label asp-for="CritereEco" class="control-label"></label>
-                <input asp-for="CritereEco" class="form-control" />
+                <select asp-for="CritereEco" class="form-select"
+                        asp-items="critereEcoRepository.Get()
+                                                   .Select(d => new SelectListItem(){
+                                                          Text = d.Nom,
+                                                          Value = d.Nom})">
+                </select>
                 <span asp-validation-for="CritereEco" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Categorie" class="control-label"></label>
-                <input asp-for="Categorie" class="form-control" />
+                <select asp-for="Categorie" class="form-select"
+                        asp-items="categorieRepository.Get()
+                                                   .Select(d => new SelectListItem(){
+                                                          Text = d.Nom,
+                                                          Value = d.Nom})">
+                </select>
                 <span asp-validation-for="Categorie" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Medias" class="control-label"></label>
-                <input asp-for="Medias" class="form-control" />
-                <span asp-validation-for="Medias" class="text-danger"></span>
             </div>
 
             <div class="form-group">

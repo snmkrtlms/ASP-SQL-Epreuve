@@ -26,6 +26,7 @@ namespace ASP_Epreuve_ASP_SQL.Controllers
             return View();
         }
 
+        //Ajout de médias pour chaque produit
         // GET: MediaController/Create
         public ActionResult Create()
         {
@@ -43,11 +44,11 @@ namespace ASP_Epreuve_ASP_SQL.Controllers
                 if (!ModelState.IsValid) throw new Exception();
                 int id = _mediaRepository.Insert(form.ToBLL());
                 await form.Url.SaveFile();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index","Produit");
             }
             catch
             {
-                return View();
+                return View(form);
             }
         }
 

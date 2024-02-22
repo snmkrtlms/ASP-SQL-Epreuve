@@ -3,4 +3,4 @@
 AS
 	SELECT *
 	FROM Produit
-	WHERE Nom = @NomProduit
+	 WHERE Nom LIKE LEFT(@NomProduit, 3) + '%'

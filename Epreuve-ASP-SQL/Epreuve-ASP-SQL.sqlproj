@@ -91,16 +91,9 @@
     <RefactorLog Include="Epreuve-ASP-SQL.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Epreuve-ASP-SQL.publish.xml" />
-    <None Include="Epreuve-ASP-SQL_1.publish.xml" />
-    <None Include="Epreuve-ASP-SQL_2.publish.xml" />
-    <None Include="Epreuve-ASP-SQL_3.publish.xml" />
-    <None Include="Epreuve-ASP-SQL_4.publish.xml" />
-    <None Include="Epreuve-ASP-SQL_5.publish.xml" />
-    <None Include="Epreuve-ASP-SQL_6.publish.xml" />
-    <None Include="Epreuve-ASP-SQL_7.publish.xml" />
+    <PostDeploy Include="Scripts\Main.Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\Main.Script.PostDeployment.sql" />
+    <None Include="Epreuve-ASP-SQL.publish.xml" />
   </ItemGroup>
 </Project>

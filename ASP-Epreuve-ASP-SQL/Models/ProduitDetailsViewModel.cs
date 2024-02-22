@@ -17,13 +17,5 @@ namespace ASP_Epreuve_ASP_SQL.Models
         public string CritereEco { get; set; }
         [DisplayName("Catégorie : ")]
         public string Categorie { get; set; }
-        [DisplayName("Médias :")]
-        [DataType(DataType.ImageUrl)]
-        public List<string> UrlImages { get; set; }
-
-        public ProduitDetailsViewModel()
-        {
-            UrlImages = new List<string>();
-        }
     }
 }
