@@ -1,0 +1,4 @@
+﻿CREATE TABLE [dbo].[CritereEco]
+(
+    [Nom] NVARCHAR(64) NOT NULL PRIMARY KEY
+)

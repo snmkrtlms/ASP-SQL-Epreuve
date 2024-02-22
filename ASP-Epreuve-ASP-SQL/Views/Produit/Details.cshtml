@@ -1,0 +1,59 @@
+﻿@model ASP_Epreuve_ASP_SQL.Models.ProduitDetailsViewModel
+@inject Shared_Epreuve_ASP_SQL.Repositories.IMediaRepository<BLL_Epreuve_ASP_SQL.Entities.Media> mediaRepository
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ProduitDetails</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Prix)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Prix)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CritereEco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CritereEco)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Categorie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Categorie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UrlImages)
+        </dt>
+        <dd class="col-sm-10">
+            @* @Html.DisplayFor(model => model.UrlImages) *@
+            @foreach (var url in Model.UrlImages)
+            {
+                <img src="@Url.Content(url)" alt="Image du Produit"/>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Produit}) |
+    <a asp-action="Index">Back to List</a>
+</div>

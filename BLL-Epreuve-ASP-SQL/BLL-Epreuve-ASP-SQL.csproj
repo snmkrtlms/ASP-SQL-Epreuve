@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>BLL_Epreuve_ASP_SQL</RootNamespace>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL-Epreuve-ASP-SQL\DAL-Epreuve-ASP-SQL.csproj" />
+    <ProjectReference Include="..\Shared-Epreuve-ASP-SQL\Shared-Epreuve-ASP-SQL.csproj" />
+  </ItemGroup>
+
+</Project>
