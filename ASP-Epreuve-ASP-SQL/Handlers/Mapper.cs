@@ -88,13 +88,13 @@ namespace ASP_Epreuve_ASP_SQL.Handlers
         }
         #endregion
 
-        public static Media ToBLL(string url, int id_Produit)
+        public static Media ToBLL(this MediaCreateForm entity)
         {
-            return new Media
-            {
-                Url = url,
-                Id_Produit = id_Produit,
-            };
+            return new Media(
+                0,
+                entity.Url.FileName,
+                entity.Id_Produit
+            );
         }
     }
 }

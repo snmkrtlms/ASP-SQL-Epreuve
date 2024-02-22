@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<ASP_Epreuve_ASP_SQL.Models.ProduitListItemViewModel>
 
+@inject Shared_Epreuve_ASP_SQL.Repositories.IMediaRepository<BLL_Epreuve_ASP_SQL.Entities.Media> mediaRepository
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -29,6 +31,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Categorie)
             </th>
+            <th>
+               Images :
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -49,6 +54,16 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Categorie)
+            </td>
+            <td>
+                @foreach (var media in mediaRepository.Get())
+                {
+                    if (item.Id_Produit == media.Id_Produit)
+                    {
+                        <img src="~/Assets/imgs/@media.Url" width="100" height="150" />
+                            
+                    }
+                }
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.Id_Produit}) |

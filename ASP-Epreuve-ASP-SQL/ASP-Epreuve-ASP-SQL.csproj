@@ -17,9 +17,4 @@
     <ProjectReference Include="..\Shared-Epreuve-ASP-SQL\Shared-Epreuve-ASP-SQL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\Assets\imgs\" />
-    <Folder Include="wwwroot\Assets\" />
-  </ItemGroup>
-
 </Project>
