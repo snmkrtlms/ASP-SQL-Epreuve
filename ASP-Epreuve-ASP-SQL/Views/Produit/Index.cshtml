@@ -27,29 +27,29 @@
                     }
 
                     <!-- Filtre par catégories -->
-                    @using (Html.BeginForm("FiltreCategorie", "Produit", FormMethod.Get))
-                    {
-                        <div class="list-group">
-                            <div class="container-fluid list-group-item border-0">
-                                <p class="text-black-50 fw-bold text-start">Catégories</p>
-                                <div id="categorieArea">
-                                    @foreach (var categorie in categorieRepository.Get())
-                                    {
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="categoriesSelectionnees" id="@categorie.Nom" value="@categorie.Nom">
-                                            <label class="form-check-label" for="@categorie.Nom">
-                                                @categorie.Nom
-                                            </label>
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Filtrer</button>
-                    }
+                     @using (Html.BeginForm("FiltreCategorie", "Produit", FormMethod.Get))
+                     {
+                         <div class="list-group">
+                             <div class="container-fluid list-group-item border-0">
+                                 <p class="text-black-50 fw-bold text-start">Catégories</p>
+                                 <div id="categorieArea">
+                                     @foreach (var categorie in categorieRepository.Get())
+                                     {
+                                         <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" name="categoriesSelectionnees" id="@categorie.Nom" value="@categorie.Nom">
+                                             <label class="form-check-label" for="@categorie.Nom">
+                                                 @categorie.Nom
+                                             </label>
+                                         </div>
+                                     }
+                                 </div>
+                             </div>
+                         </div>
+                         <button type="submit" class="btn btn-primary">Filtrer</button>
+                     }
 
                     <!-- Filtre par critères écologiques -->
-                    @using (Html.BeginForm("FiltreCritereEco", "Produit", FormMethod.Get))
+                   @using (Html.BeginForm("FiltreCritereEco", "Produit", FormMethod.Get))
                     {
                         <div class="list-group">
                             <div class="container-fluid list-group-item border-0">

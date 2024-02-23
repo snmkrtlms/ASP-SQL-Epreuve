@@ -28,7 +28,7 @@ namespace BLL_Epreuve_ASP_SQL.Services
         }
 
         public Produit Get(int id)
-        {
+       {
             return _repository.Get(id).ToBLL();
         }
 
@@ -49,7 +49,7 @@ namespace BLL_Epreuve_ASP_SQL.Services
 
         public IEnumerable<Produit> GetPopulaires()
         {
-            throw new NotImplementedException();
+            return _repository.GetPopulaires().Select(d => d.ToBLL());
         }
 
         public int Insert(Produit entity)

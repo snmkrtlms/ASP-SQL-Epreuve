@@ -134,7 +134,22 @@ namespace DAL_Epreuve_ASP_SQL.Services
 
         public IEnumerable<Produit> GetPopulaires()
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SP_Produit_Populaire";
+                    command.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            yield return reader.ToProduit();
+                        }
+                    }
+                }
+            }
         }
 
         public int Insert(Produit entity)

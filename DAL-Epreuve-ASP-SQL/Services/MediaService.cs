@@ -17,7 +17,17 @@ namespace DAL_Epreuve_ASP_SQL.Services
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SP_Media_Delete";
+                    command.Parameters.AddWithValue("Id_Produit", id);
+                    command.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
+                    if (command.ExecuteNonQuery() <= 0) throw new ArgumentOutOfRangeException(nameof(id), $"L'identifiant {id} ne correspond à aucune valeur");
+                }
+            }
         }
 
         public IEnumerable<Media> Get()

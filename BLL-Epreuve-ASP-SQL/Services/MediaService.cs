@@ -18,9 +18,9 @@ namespace BLL_Epreuve_ASP_SQL.Services
         }
  
         public void Delete(int id)
-            {
-                throw new NotImplementedException();
-            }
+        {
+            _repository.Delete(id);
+        }
 
         public IEnumerable<Media> Get()
         {

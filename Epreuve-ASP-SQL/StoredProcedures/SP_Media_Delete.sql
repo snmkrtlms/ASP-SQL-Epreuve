@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[SP_Media_Delete]
-	@Id_Media INT
+	@Id_Produit INT
 AS
 	DELETE FROM [Media]
-	WHERE [Id_Media] = @Id_Media
+	WHERE [Id_Produit] = @Id_Produit

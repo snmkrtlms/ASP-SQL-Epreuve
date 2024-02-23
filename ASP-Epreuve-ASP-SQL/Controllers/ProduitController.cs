@@ -4,6 +4,7 @@ using BLL_Epreuve_ASP_SQL.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared_Epreuve_ASP_SQL.Repositories;
+using System.Reflection;
 
 namespace ASP_Epreuve_ASP_SQL.Controllers
 {
@@ -11,16 +12,20 @@ namespace ASP_Epreuve_ASP_SQL.Controllers
     {
         private readonly IProduitRepository<Produit> _produitRepository;
         private readonly ICategorieRepository<Categorie> _categorieRepository;
+        private readonly IMediaRepository<Media> _mediaRepository;
 
-        public ProduitController(IProduitRepository<Produit> produitRepository, ICategorieRepository<Categorie> categorieRepository)
+        public ProduitController(IProduitRepository<Produit> produitRepository, ICategorieRepository<Categorie> categorieRepository, IMediaRepository<Media> mediaRepository)
         {
             _produitRepository = produitRepository;
             _categorieRepository = categorieRepository;
+            _mediaRepository = mediaRepository;
         }
 
         // GET: ProduitController
         public ActionResult Index()
         {
+            //Pas encore crée de panier pour afficher la liste des produits populaires
+            //IEnumerable<ProduitListItemViewModel> model = _produitRepository.GetPopulaires().Select(d => d.ToListItem());
             IEnumerable<ProduitListItemViewModel> model = _produitRepository.Get().Select(d => d.ToListItem());
 
             return View(model);
@@ -160,6 +165,7 @@ namespace ASP_Epreuve_ASP_SQL.Controllers
         {
             try
             {
+                _mediaRepository.Delete(id);
                 _produitRepository.Delete(id);
                 return RedirectToAction(nameof(Index));
             }

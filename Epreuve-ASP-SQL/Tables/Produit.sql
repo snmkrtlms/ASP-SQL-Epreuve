@@ -3,7 +3,7 @@
 	[Id_Produit] INT NOT NULL IDENTITY PRIMARY KEY, 
     [Nom] NVARCHAR(64) NOT NULL, 
     [Description] NVARCHAR(MAX) NOT NULL, 
-    [Prix] DECIMAL(10, 2) NOT NULL, 
+    [Prix] DECIMAL(10, 3) NOT NULL, 
     [CritereEco] NVARCHAR(64) NOT NULL, 
     [Categorie] NVARCHAR(64) NOT NULL,
 

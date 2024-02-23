@@ -18,6 +18,7 @@ namespace ASP_Epreuve_ASP_SQL.Models
         [Required(ErrorMessage = "La description est obligatoire.")]
         public string Description { get; set; }
         [DisplayName("Prix : ")]
+        [DataType(DataType.Currency)]
         [Required(ErrorMessage = "Le prix est obligatoire.")]
         public decimal Prix { get; set; }
         [DisplayName("Critère écologique : ")]
