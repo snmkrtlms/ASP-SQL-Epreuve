@@ -6,6 +6,7 @@ namespace BLL_Epreuve_ASP_SQL.Entities
 {
     public class CritereEco
     {
+        //Constructeur
         public CritereEco(string nom)
         {
             Nom = nom;

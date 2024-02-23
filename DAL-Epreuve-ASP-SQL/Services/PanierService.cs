@@ -1,34 +1,33 @@
 ﻿using DAL_Epreuve_ASP_SQL.Entities;
+using DAL_Epreuve_ASP_SQL.Mappers;
 using Microsoft.Extensions.Configuration;
 using Shared_Epreuve_ASP_SQL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data;
 using System.Text;
-using DAL_Epreuve_ASP_SQL.Mappers;
 
 namespace DAL_Epreuve_ASP_SQL.Services
 {
-    public class CritereEcoService : BaseService, ICritereEcoRepository<CritereEco>
+    public class PanierService : BaseService, IPanierRepository<Panier>
     {
-        public CritereEcoService(IConfiguration configuration) : base(configuration, "Epreuve-ASP-SQL")
+        public PanierService(IConfiguration configuration) : base(configuration, "Epreuve-ASP-SQL")
         { }
 
-        //Récupérer tous les critères
-        public IEnumerable<CritereEco> Get()
+        //Récupérer toutes les commandes (nom de la table Panier)
+        public IEnumerable<Panier> Get()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT * FROM [CritereEco]";
+                    command.CommandText = "SELECT * FROM [Panier]";
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            yield return reader.ToCritereEco();
+                            yield return reader.ToPanier();
                         }
                     }
                 }

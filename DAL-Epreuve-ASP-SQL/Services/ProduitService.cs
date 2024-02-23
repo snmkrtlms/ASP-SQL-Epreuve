@@ -15,6 +15,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
         public ProduitService(IConfiguration configuration) : base(configuration, "Epreuve-ASP-SQL")
         { }
 
+        //Supprimer un produit à l'aide de son id
         public void Delete(int id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -30,6 +31,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
             }
         }
 
+        //Récupérer tous les produits
         public IEnumerable<Produit> Get()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -50,6 +52,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
             }
         }
 
+        //Récupérer le produit grâce à son id
         public Produit Get(int id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -69,6 +72,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
             }
         }
 
+        //Récupérer tous les produits d'une catégorie spécifiée
         public IEnumerable<Produit> GetByCategorie(string categorie)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -90,6 +94,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
             }
         }
 
+        //Récupérer tous les produits d'un critère spécifié
         public IEnumerable<Produit> GetByCritereEco(string critereEco)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -111,6 +116,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
             }
         }
 
+        //Récupérer tous les produits du même nom (identiques au 3 premières lettres)
         public IEnumerable<Produit> GetByNom(string nomProduit)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -132,6 +138,8 @@ namespace DAL_Epreuve_ASP_SQL.Services
             }
         }
 
+        //Récupérer tous les produits populaires depuis Panier et Produit en fct de la somme totale de la quantité de chaque produit vendu
+        //les résultats sont regroupés par produit et triés par la quantité totale vendue en ordre décroissant
         public IEnumerable<Produit> GetPopulaires()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -152,6 +160,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
             }
         }
 
+        //Insérer le produit créé
         public int Insert(Produit entity)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -171,6 +180,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
             }
         }
 
+        //Mettre à jour le produit
         public void Update(Produit entity)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

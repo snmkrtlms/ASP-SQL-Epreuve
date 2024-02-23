@@ -5,7 +5,7 @@
     ViewData["Title"] = "FiltreCategorie";
 }
 
-<h1>FiltreCategorie</h1>
+<h1>Filtre par catégorie : </h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -62,11 +62,12 @@
                 }
             </td>
             <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id_Produit }) |
+                    @* @Html.ActionLink("Edit", "Edit", new { id = item.Id_Produit }) | *@
                     @Html.ActionLink("Details", "Details", new { id = item.Id_Produit }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id_Produit })
+                    @* @Html.ActionLink("Delete", "Delete", new { id = item.Id_Produit }) *@
             </td>
         </tr>
 }
     </tbody>
 </table>
+@Html.ActionLink("Retour","Index")

@@ -6,6 +6,7 @@ namespace BLL_Epreuve_ASP_SQL.Entities
 {
     public class Media
     {
+        //Constructeur
         public Media(int id_Media, string url, int id_Produit)
         {
             Id_Media = id_Media;

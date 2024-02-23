@@ -37,6 +37,7 @@ namespace BLL_Epreuve_ASP_SQL.Mappers
         }
         #endregion
 
+        #region CritereEco
         public static CritereEco ToBLL(this DAL.CritereEco entity)
         {
             if (entity is null) return null;
@@ -44,7 +45,9 @@ namespace BLL_Epreuve_ASP_SQL.Mappers
                 entity.Nom
             );
         }
+        #endregion
 
+        #region Categorie
         public static Categorie ToBLL(this DAL.Categorie entity)
         {
             if (entity is null) return null;
@@ -52,6 +55,7 @@ namespace BLL_Epreuve_ASP_SQL.Mappers
                 entity.Nom
             );
         }
+        #endregion
 
         #region Media
         public static Media ToBLL(this DAL.Media entity)
@@ -72,6 +76,19 @@ namespace BLL_Epreuve_ASP_SQL.Mappers
                 Url = entity.Url,
                 Id_Produit = entity.Id_Produit
             };
+        }
+        #endregion
+
+        #region Panier
+        public static Panier ToBLL(this DAL.Panier entity)
+        {
+            if (entity is null) return null;
+            return new Panier(
+                entity.Id_Panier,
+                entity.Quantite,
+                entity.Id_Commande,
+                entity.Id_Produit
+            );
         }
         #endregion
     }

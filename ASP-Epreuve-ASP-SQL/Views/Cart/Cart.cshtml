@@ -1,7 +1,7 @@
 ﻿@model List<BLL_Epreuve_ASP_SQL.Entities.Produit>
 
 <h2>Panier</h2>
-@if (Model.Count == 0)
+@* @if (Model.Count == 0)
 {
     <p>Votre panier est vide.</p>
 }
@@ -12,12 +12,12 @@ else
             <th>Nom du Produit</th>
             <th>Prix</th>
         </tr>
-        @foreach (var product in Model)
+        @foreach (var produit in Model)
         {
             <tr>
-                <td>@product.Nom</td>
-                <td>@product.Prix</td>
+                <td>@produit.Nom</td>
+                <td>@produit.Prix</td>
             </tr>
         }
     </table>
-}
+} *@

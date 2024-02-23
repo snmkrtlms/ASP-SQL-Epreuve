@@ -14,6 +14,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
         public CategorieService(IConfiguration configuration) : base(configuration, "Epreuve-ASP-SQL")
         { }
 
+        //Récupérer toutes les catégories
         public IEnumerable<Categorie> Get()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

@@ -24,7 +24,7 @@ namespace ASP_Epreuve_ASP_SQL.Controllers
         // GET: ProduitController
         public ActionResult Index()
         {
-            //Pas encore crée de panier pour afficher la liste des produits populaires
+            //Pas encore crée de commandes pour afficher la liste des produits populaires
             //IEnumerable<ProduitListItemViewModel> model = _produitRepository.GetPopulaires().Select(d => d.ToListItem());
             IEnumerable<ProduitListItemViewModel> model = _produitRepository.Get().Select(d => d.ToListItem());
 

@@ -15,6 +15,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
         public MediaService(IConfiguration configuration) : base(configuration, "Epreuve-ASP-SQL")
         { }
 
+        //Supprimer l'image qui correspond à l'Id_Produit
         public void Delete(int id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -30,6 +31,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
             }
         }
 
+        //Récupérer toutes les images
         public IEnumerable<Media> Get()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -55,6 +57,7 @@ namespace DAL_Epreuve_ASP_SQL.Services
             throw new NotImplementedException();
         }
 
+        //Insérer une image dans produit
         public int Insert(Media entity)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))

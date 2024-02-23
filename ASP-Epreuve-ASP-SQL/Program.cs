@@ -12,16 +12,19 @@ namespace ASP_Epreuve_ASP_SQL
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            #region Services Configure (Currency)
+
             builder.Services.Configure<RequestLocalizationOptions>(options =>
             {
                 string[] supportedCultures = new string[]
                 {
-                    "en-Us",
-                    "fr-Be"
+                    "en-US",
+                    "fr-BE"
                 };
                 string defaultCulture = supportedCultures[1];
                 options.SetDefaultCulture(defaultCulture);
             });
+            #endregion
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -45,6 +48,7 @@ namespace ASP_Epreuve_ASP_SQL
                 options.Secure = CookieSecurePolicy.Always;
             });
             #endregion
+
             #region Services Produit
             builder.Services.AddScoped<IProduitRepository<BLL.Entities.Produit>, BLL.Services.ProduitService>();
             builder.Services.AddScoped<IProduitRepository<DAL.Entities.Produit>, DAL.Services.ProduitService>();

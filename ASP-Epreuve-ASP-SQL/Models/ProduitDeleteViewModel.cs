@@ -12,6 +12,7 @@ namespace ASP_Epreuve_ASP_SQL.Models
         [DisplayName("Description : ")]
         public string Description { get; set; }
         [DisplayName("Prix : ")]
+        [DataType(DataType.Currency)]
         public decimal Prix { get; set; }
         [DisplayName("Critère écologique : ")]
         public string CritereEco { get; set; }

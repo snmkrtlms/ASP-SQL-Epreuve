@@ -96,5 +96,17 @@ namespace ASP_Epreuve_ASP_SQL.Handlers
                 entity.Id_Produit
             );
         }
+
+        public static PanierListItemViewModel ToListItem(this Panier entity)
+        {
+            if (entity is null) return null;
+            return new PanierListItemViewModel
+            {
+                Id_Panier = entity.Id_Panier,
+                Quantite = entity.Quantite,
+                Id_Commande = entity.Id_Commande,
+                Id_Produit = entity.Id_Produit,
+            };
+        }
     }
 }

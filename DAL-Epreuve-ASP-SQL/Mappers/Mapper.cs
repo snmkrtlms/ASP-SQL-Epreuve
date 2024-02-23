@@ -39,6 +39,7 @@ namespace DAL_Epreuve_ASP_SQL.Mappers
                 Nom = (string)record[nameof(Categorie.Nom)]
             };
         }
+
         public static Media ToMedia(this IDataRecord record)
         {
             if (record is null) return null;
@@ -47,6 +48,17 @@ namespace DAL_Epreuve_ASP_SQL.Mappers
                 Id_Media = (int)record[nameof(Media.Id_Media)],
                 Url = (string)record[nameof(Media.Url)],
                 Id_Produit = (int)record[nameof(Media.Id_Produit)]
+            };
+        }
+        public static Panier ToPanier(this IDataRecord record)
+        {
+            if (record is null) return null;
+            return new Panier
+            {
+                Id_Panier = (int)record[nameof(Panier.Id_Panier)],
+                Quantite = (int)record[nameof(Panier.Quantite)],
+                Id_Commande = (int)record[nameof(Panier.Id_Commande)],
+                Id_Produit = (int)record[nameof(Panier.Id_Produit)]
             };
         }
     }
